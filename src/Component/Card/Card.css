@@ -1,0 +1,36 @@
+.cards{
+    position: relative;
+    margin-top: 50px;
+    width: 16vw;
+    transition: all 0.5s ease-in-out;
+
+}
+.card_img{
+   
+    width: 16vw;
+    transition: all 0.5s ease-in-out;
+    border-radius: 10px;
+}
+
+.cards_overlay{
+    display: none;
+  position: absolute;
+  bottom: 4vh;
+  left: 1vw;
+ 
+}
+.card_description{
+    width: 15vw;
+    text-align: left;
+}
+.cards:hover{
+    z-index: 9;
+  scale: 1.2;
+    .cards_overlay{
+        display: block;
+     
+    } 
+    .card_img{filter : brightness(0.5)}
+    
+    
+}

@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import { Link } from "react-router-dom";
+import MovieList from "../../Component/MovieList/MovieList";
 
 export default class Home extends Component {
 results =  [
@@ -476,7 +477,7 @@ if (e.backdrop_path !== null) {
         
             </Carousel>
       </div>
-      
+      <MovieList/>
       </>
     )
   }

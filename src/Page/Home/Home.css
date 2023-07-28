@@ -50,3 +50,12 @@ height: 100%;
 .rating{
     margin-left: 40px;
 }
+
+.card_title{
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.card_rating{
+    font-size: 1.25rem;
+}

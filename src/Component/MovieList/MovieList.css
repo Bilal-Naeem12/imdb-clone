@@ -1,0 +1,19 @@
+.movie_list
+{
+    width: 99.13vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(36, 35, 35);
+  padding-block: 50px;
+}
+
+.list_Cards{
+    padding: 0;
+    justify-content: space-between;
+    width: 76vw;
+}
+.cover{
+    margin-top: -20px;
+}
