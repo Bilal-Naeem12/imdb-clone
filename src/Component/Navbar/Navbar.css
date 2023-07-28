@@ -1,0 +1,28 @@
+img{
+    width:80px;
+    margin-right : 2rem
+}
+.icon{
+
+   font-size: 30px;
+}
+
+
+
+.hover-link{
+    cursor: pointer;
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.637);
+}
+
+.hover-link:hover{
+    color: rgb(255, 0, 0);
+}
+
+.active-link  {
+    color: rgb(255, 0, 0);
+}
+ul li {
+    margin-right: 2rem;
+}
+
