@@ -3,8 +3,10 @@ import "./Home.css"
 import React, { Component } from 'react'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+import { Link } from "react-router-dom";
+
 export default class Home extends Component {
-results = [
+results =  [
   {
     "adult": false,
     "backdrop_path": "/yF1eOkaYvwiORauRCPWznV9xVvi.jpg",
@@ -438,19 +440,40 @@ this.setState({
     return (
       <>
       <div className="poster">
-      <Carousel autoPlay={true} showThumbs={false}  transitionTime={1} infiniteLoop={true} showStatus={false} showArrows={true}>
-                <div>
-                    <img className="immg"   src="https://plus.unsplash.com/premium_photo-1690164161383-f5ff30a790bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=685&q=80" />
-               
-                </div>
-                <div>
-                    <img className="immg" src="https://images.unsplash.com/photo-1690261003258-0bbe37fa0209?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" />
-                
-                </div>
-                <div>
-                    <img className="immg" src="https://plus.unsplash.com/premium_photo-1690164161383-f5ff30a790bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=685&q=80" />
-                
-                </div>
+      <Carousel autoPlay={true} showThumbs={false}  transitionTime={2} infiniteLoop={true} showStatus={false} showArrows={true}>
+    {
+     
+this.results.map((e,i)=>{
+if (e.backdrop_path !== null) {
+  return <>
+ <Link style={{textDecoration:"none",color :"white"}} to={`/movie/${e.id}`} >
+  <div className="immg">
+  <img className="immg2" src={`https://image.tmdb.org/t/p/original${e && e.backdrop_path}`} alt="" />
+  </div>
+<div className="poster_Overlay">
+<div className="poster_title">
+  {e?e.original_title:""}
+</div>
+<div className="poster_release">
+  {e?e.release_date:""}
+  <span className="rating">{e.vote_average} <i class="fa-solid fa-star"></i></span>
+</div>
+<div className="post_description">
+  {e.overview}
+</div>
+</div>
+</Link>
+  </>
+}
+
+ 
+}) }
+
+
+
+
+
+        
             </Carousel>
       </div>
       

@@ -1,6 +1,52 @@
 .immg{
 
 
-    width: 80vw;
-    height: 50vh;
+  width: 100vw;
+    height: 80vh;
+    filter: brightness(0.4);
+}
+
+.immg2{
+
+width: 50%;
+height: 100%;
+
+
+}
+
+.poster_Overlay{
+    position: absolute;
+    left: 10vw;
+
+    bottom: 12vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2vh;
+ 
+    width: 100vw;
+    margin-inline: auto;
+}
+
+
+.poster_title{
+
+    
+    font-size: 4rem;
+
+    font-weight: 900;
+}
+
+.post_description{
+    width: 40vw;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.poster_release{
+    font-size: 2rem;
+}
+
+.rating{
+    margin-left: 40px;
 }
