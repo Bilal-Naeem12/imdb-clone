@@ -37,9 +37,10 @@ export default function Card({movie}) {
     <img className='card_img' src={`https://image.tmdb.org/t/p/original${movie?movie.poster_path:""}`} alt="" />
     <div className="cards_overlay ">
         <div className="card_title ">{movie?movie.original_title:""}</div>
-        <div className="card_rating mt-1">{movie?movie.release_date:""}
+        <div className="card_rating mt-1   ">
+            <span>{movie?movie.release_date:""}</span>
       
-       <span> {movie?movie.vote_average:""}<i className="fa-solid fa-star"></i></span>
+       <span className=''> {movie?movie.vote_average:""}<i className="fa-solid fa-star icon"></i></span>
        
        </div>
         <div className="card_description mt-2">{movie?movie.overview.slice(0,100)+"...":""}</div>

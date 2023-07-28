@@ -2,7 +2,7 @@
 
 
   width: 100vw;
-    height: 80vh;
+    height: 85vh;
     filter: brightness(0.4);
 }
 
@@ -44,12 +44,14 @@ height: 100%;
 }
 
 .poster_release{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 22%;
+    
     font-size: 2rem;
 }
 
-.rating{
-    margin-left: 40px;
-}
 
 .card_title{
     font-size: 1.5rem;
@@ -58,4 +60,8 @@ height: 100%;
 
 .card_rating{
     font-size: 1.25rem;
+}
+
+.icon{
+    color: yellow;
 }

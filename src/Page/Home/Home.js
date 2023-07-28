@@ -444,7 +444,7 @@ this.setState({
       <Carousel autoPlay={true} showThumbs={false}  transitionTime={2} infiniteLoop={true} showStatus={false} showArrows={true}>
     {
      
-this.results.map((e,i)=>{
+this.results.map((e)=>{
 if (e.backdrop_path !== null) {
   return <>
  <Link style={{textDecoration:"none",color :"white"}} to={`/movie/${e.id}`} >
