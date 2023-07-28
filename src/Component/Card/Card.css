@@ -1,13 +1,13 @@
 .cards{
     position: relative;
     margin-top: 50px;
-    width: 16vw;
+    width: 300px;
     transition: all 0.5s ease-in-out;
 
 }
 .card_img{
    
-    width: 16vw;
+    width: 300px;
     transition: all 0.5s ease-in-out;
     border-radius: 10px;
 }

@@ -1,6 +1,6 @@
 .movie_list
 {
-    width: 99.13vw;
+    width: 99vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,8 +11,9 @@
 
 .list_Cards{
     padding: 0;
-    justify-content: space-between;
+    
     width: 76vw;
+justify-content: space-around;
 }
 .cover{
     margin-top: -20px;

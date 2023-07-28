@@ -417,14 +417,14 @@ results =  [
 constructor(){
 super()
 this.state = {
-  popularMovies : this.results
+  popularMovies : []
 }
 
 
 }
 
 async componentDidMount (){
-  let data = await fetch("https://api.themoviedb.org/3/movie/popular?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US")
+  let data = await fetch("https://api.themoviedb.org/3/movie/upcoming?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US")
 let parsedData =  await data.json()
 console.log(parsedData.results)
 
