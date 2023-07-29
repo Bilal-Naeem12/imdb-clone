@@ -24,7 +24,7 @@ height: 100%;
     align-items: flex-start;
     gap: 2vh;
  
-    width: 100vw;
+    width: 90vw;
     margin-inline: auto;
 }
 
@@ -47,7 +47,7 @@ height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 22%;
+    width: 30%;
     
     font-size: 2rem;
 }
@@ -62,6 +62,6 @@ height: 100%;
     font-size: 1.25rem;
 }
 
-.icon{
+.icon2{
     color: yellow;
 }
