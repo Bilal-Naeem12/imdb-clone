@@ -8,7 +8,11 @@ export default function MovieList() {
 const [spinner, setspinner] = useState(true)
     const [movieList, setmovieList] = useState([])
 const {types}  = useParams()
+
+
+
 useEffect(()=>{
+    setspinner(true)
     setTimeout(() => {
         setspinner(false)
     }, 2000);
