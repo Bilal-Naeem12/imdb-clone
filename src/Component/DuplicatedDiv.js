@@ -7,7 +7,7 @@ const DuplicatedDiv = ({ n }) => {
   return (
     <div>
       {times.map((_, index) => (
-    <i className="fa-solid fa-star icon"></i>
+    <i key={index} className="fa-solid fa-star icon"></i>
       ))}
     </div>
   );

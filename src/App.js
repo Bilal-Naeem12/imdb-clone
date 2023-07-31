@@ -1,13 +1,14 @@
 import Navbar from './Component/Navbar/Navbar';
 import './App.css';
-import { BrowserRouter as Router , Route,Routes,useParams } from 'react-router-dom';
+import { BrowserRouter as Router , Route,Routes } from 'react-router-dom';
 import Home from './Page/Home/Home';
-import DuplicatedDiv from './Component/DuplicatedDiv';
+import Footer from './Component/Footer';
 import MovieList from './Component/MovieList/MovieList';
+import Detail from './Page/MovieDetail/Detail';
+import { useState } from 'react';
 function App() {
 
-  const {types} = useParams()
-  const numberOfDuplications = 5;
+const [status, setstatus] = useState(false)
   return (
 <Router>
 <Navbar/>
@@ -16,14 +17,14 @@ function App() {
 
 
   <Route index element={<Home/>}></Route>
-  <Route  path="/movie/:id" element={<h1>Movie Page Detail</h1>}></Route>
-  <Route  path="/movies/:types" element={<MovieList/>}></Route>
+  <Route  path="/movie/:id" element={<Detail setstatus={setstatus}/>}></Route>
+  <Route  path="/movies/:types" element={<MovieList setstatus={setstatus}/>}></Route>
   
 
   <Route  path="/*" element={<h1>Error Page</h1>}></Route>
 </Routes>
 
-
+<Footer status={status} />
 </Router>
   );
 }
