@@ -52,7 +52,7 @@ export default function Detail({ setstatus }) {
                 </div>
 
 
-                <div className="card position-relative bg-dark text-white px-4 pb-5 super-parent "  >
+                <div className="card position-relative bg-dark text-white px-4 pb-5  super-parent "  >
                     <img className="position-absolute image-card" style={{ width: "24vw", height: "65vh" }} src={`https://image.tmdb.org/t/p/original${Movie ? Movie.poster_path : ""}`} alt="..." />
                     <div className="d-flex flex-column   px-1 gap-0 text-white position-absolute details " >
                         <h1 className='title'>{`${Movie?.title}`}</h1>
@@ -73,12 +73,12 @@ export default function Detail({ setstatus }) {
                     </div>
                     <div className="   over"><h2>Overview</h2> <p>{`${Movie ? Movie.overview : ""}`}</p></div>
 
-                    <div className="d-flex justify-content-between  align-items-start  gap-5 parent ">
+                    <div className="d-flex justify-content-between  align-items-start mt-5 gap-5 parent ">
 
                         <div className="   movie-Detail  d-flex  flex-column justify-content-center gap-5  align-items-center ">
                             <h2 className=''>Production Companys</h2>
 
-                            <div className="d-flex">    {
+                            <div className="d-flex flex-column gap-5">    {
 
                                 Movie.production_companies?.map((e) => {
 
@@ -111,7 +111,7 @@ export default function Detail({ setstatus }) {
                         </div>
 
                     </div>
-
+                    <div className="linkss"><span className='me-5 linky'>For More Detail Check Out This Link</span> <button type="button" className="btn but btn-danger"><a  target='_blank' href={Movie.homepage}>Home Page <i class="ms-1 fa-solid fa-up-right-from-square"></i></a></button></div>
 
 
                 </div>
