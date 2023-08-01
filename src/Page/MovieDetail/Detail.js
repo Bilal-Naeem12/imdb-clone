@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./Detail.css"
 import Feature from './Feature'
 import Genre from './Genre'
 import DuplicatedDiv from '../../Component/DuplicatedDiv'
 import { useParams } from 'react-router-dom'
 import Spinner from '../../Component/MovieList/Spinner'
+import Context from '../../Context/Context'
 
 
 
-export default function Detail({ setstatus }) {
-
+export default function Detail() {
+const setstatus = useContext(Context)
     let { id } = useParams()
     const [Movie, setMovie] = useState(null)
     const [isLoading, setisLoading] = useState(true)
@@ -26,7 +27,7 @@ export default function Detail({ setstatus }) {
 
 
     const getData = async () => {
-        setstatus(false)
+        setstatus.update(false)
         let data = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US`)
         let parsedData = await data.json()
         console.log("this is Movie" + parsedData.genres)
@@ -34,7 +35,7 @@ export default function Detail({ setstatus }) {
 
         setMovie(parsedData)
         setisLoading(false)
-        setstatus(true)
+        setstatus.update(true)
     }
 
 
@@ -52,18 +53,16 @@ export default function Detail({ setstatus }) {
                 </div>
 
 
-                <div className="card position-relative bg-dark text-white px-4 pb-5  super-parent "  >
+                <div className="card position-relative bg-dark text-white pt-4  px-5 super-parent "  >
                     <img className="position-absolute image-card" style={{ width: "24vw", height: "65vh" }} src={`https://image.tmdb.org/t/p/original${Movie ? Movie.poster_path : ""}`} alt="..." />
                     <div className="d-flex flex-column   px-1 gap-0 text-white position-absolute details " >
                         <h1 className='title'>{`${Movie?.title}`}</h1>
 
                         <div className="rating d-flex gap-3 align-items-center ">
-                            <span className='voting_points'>{Number.parseFloat(Movie?.vote_average).toFixed(2)}</span>
+                           <span className='voting_points'>{Number.parseFloat(Movie?.vote_average).toFixed(2)}</span>
                             <span className="start"><DuplicatedDiv n={Math.ceil(Movie?.vote_average / 2)} /></span>
                         </div>
-                        <div className="movie_time">
-
-                        </div>
+                      
                         <div className="release_date mb-3 ">{Movie?.release_date}</div>
                         <div className='mb-3 d-flex  gap-4'>{
                             Movie.genres?.map((e) => {
@@ -111,7 +110,7 @@ export default function Detail({ setstatus }) {
                         </div>
 
                     </div>
-                    <div className="linkss"><span className='me-5 linky'>For More Detail Check Out This Link</span> <button type="button" className="btn but btn-danger"><a  target='_blank' href={Movie.homepage}>Home Page <i class="ms-1 fa-solid fa-up-right-from-square"></i></a></button></div>
+                    <div className="linkss"><span className='me-5 linky'>For More Detail Check Out This Link</span> <button type="button" className={`btn but ${!Movie.homepage?"disabled":""} btn-danger`}><a  target='_blank' href={Movie.homepage}>Home Page <i class="ms-1 fa-solid fa-up-right-from-square"></i></a></button></div>
 
 
                 </div>

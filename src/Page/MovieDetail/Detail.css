@@ -22,7 +22,7 @@
   }
 
   .image-card{
-    bottom: 75%;
+    bottom: 80%;
     left: 2%;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.712) 0px 0px 15px 1px;
@@ -110,9 +110,6 @@ justify-content: space-between;
   background-color: aqua;
 }
 
-.super-parent {
-  height: 140vh;
-}
 
 
 
@@ -136,7 +133,7 @@ justify-content: space-between;
 
 
 .linkss{
-
+margin-block: 55px;
   font-size: 2vw;
 }
 
