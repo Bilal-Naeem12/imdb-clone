@@ -22,7 +22,7 @@
   }
 
   .image-card{
-    bottom: 80%;
+    bottom: 85%;
     left: 2%;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.712) 0px 0px 15px 1px;
@@ -66,7 +66,7 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
   font-weight: 400;
  margin-top: 100px;
 }
-.movie-Detail h2{
+ h2{
 
   font-size: 3vw;
   font-weight: 600;
@@ -157,3 +157,64 @@ a{
   background-color: rgba(255, 0, 0, 0.699);
 }
 
+
+.movie_list_d
+
+{
+  margin-block: 50px;
+  z-index: 5;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(36, 35, 35, 0);
+flex-direction: column;
+}
+
+.list_Cards_d{
+ margin-left: 25px;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+.cover_d{
+  display: flex;
+  justify-content:  flex-start;
+  align-items: center;
+  height: 600px;
+width: 100%;
+  overflow-x: auto;
+    margin-top: -20px;
+    scrollbar-width: none;
+}
+
+
+.scroller-btn{
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 7vw;
+ cursor: pointer;
+ background-color: rgba(0, 0, 0, 0.938);
+ padding-inline: 10px;
+ border-radius: 5px;
+ position: absolute;
+ font-size: 4vw;
+}
+
+.cover_d::-webkit-scrollbar {
+  display: none;
+}
+
+
+.sug-btn-left{
+ transform: translateX(-42vw);
+}
+
+.sug-btn-right{
+  transform: translateX(42vw);
+ }

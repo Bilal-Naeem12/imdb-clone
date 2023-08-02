@@ -16,7 +16,7 @@ export default class Navbar extends Component {
 
 
   render() {
-    console.log("im render")
+  
     return (
       <nav className="navbar navbar-expand-lg bg-dark navbar-dark sticky-top ">
         <div className="container-fluid mx-4" >

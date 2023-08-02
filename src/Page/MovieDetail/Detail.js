@@ -6,24 +6,49 @@ import DuplicatedDiv from '../../Component/DuplicatedDiv'
 import { useParams } from 'react-router-dom'
 import Spinner from '../../Component/MovieList/Spinner'
 import Context from '../../Context/Context'
-
-
+import Card from '../../Component/Card/Card'
+import { useRef } from 'react'
 
 export default function Detail() {
 const setstatus = useContext(Context)
     let { id } = useParams()
     const [Movie, setMovie] = useState(null)
     const [isLoading, setisLoading] = useState(true)
+    const [movieList, setmovieList] = useState([])
 
+    const scrollContainerRef = useRef(null);
+
+    const handleScrollLeft = () => {
+      scrollContainerRef.current.scrollBy({ left: -800, behavior: 'smooth' }); // Adjust the value as needed
+    };
+  
+    const handleScrollRight = () => {
+      scrollContainerRef.current.scrollBy({ left: 800, behavior: 'smooth' }); // Adjust the value as needed
+    };
+  const reset = ()=>{
+   
+
+  scrollContainerRef.current?.scrollTo({ left: 0, behavior: 'smooth' });
+
+  }
+ 
     useEffect(() => {
         getData()
-
+        getSuggetion()
+       
+window.scrollTo(0,0)
+reset()
 
     }, [id])
 
 
 
+    const getSuggetion = async () => {
 
+        await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US`)
+            .then(res => res.json()).then(data => { setmovieList(data.results) })
+
+    }
 
 
     const getData = async () => {
@@ -112,6 +137,37 @@ const setstatus = useContext(Context)
                     </div>
                     <div className="linkss"><span className='me-5 linky'>For More Detail Check Out This Link</span> <button type="button" className={`btn but ${!Movie.homepage?"disabled":""} btn-danger`}><a  target='_blank' href={Movie.homepage}>Home Page <i class="ms-1 fa-solid fa-up-right-from-square"></i></a></button></div>
 
+{/* Suggestions */}
+                    <div className="movie_list_d position-relative ">
+                <h2 className=''>Sugguestions</h2>
+                <i class="fa-solid fa-chevron-left sug-btn-left scroller-btn " onClick={handleScrollLeft}></i>
+                <div className="cover_d text-light " ref={scrollContainerRef} >
+       
+              
+                    <div className="list_Cards_d ">
+                       
+                        {
+                            movieList.map((e) => {
+                                for (let i = 0; i < Movie.genres.length; i++) {
+                                  
+                                  
+                            
+                                        if (e.genre_ids.includes(Movie.genres[i].id )&& e.backdrop_path !== null && e.original_title !== Movie.original_title) {
+                                            return <Card movie={e} />
+                                          }
+                                
+                                
+                                }
+                             
+                            
+                            })
+                        }
+                           
+                    </div>
+                  
+                </div>
+                <i class="fa-solid fa-chevron-right sug-btn-right scroller-btn " onClick={handleScrollRight}></i>
+            </div>
 
                 </div>
 
