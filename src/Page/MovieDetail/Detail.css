@@ -199,11 +199,12 @@ width: 100%;
   align-items: center;
   height: 7vw;
  cursor: pointer;
- background-color: rgba(0, 0, 0, 0.938);
+ background-color: rgba(0, 0, 0, 0.356);
  padding-inline: 10px;
  border-radius: 5px;
  position: absolute;
  font-size: 4vw;
+ transition: all 0.2s ease-in-out;
 }
 
 .cover_d::-webkit-scrollbar {
@@ -214,7 +215,12 @@ width: 100%;
 .sug-btn-left{
  transform: translateX(-42vw);
 }
-
+.sug-btn-left:hover{
+  background-color: rgb(0, 0, 0);
+ }
 .sug-btn-right{
   transform: translateX(42vw);
+ }
+ .sug-btn-right:hover{
+  background-color: rgb(0, 0, 0);
  }

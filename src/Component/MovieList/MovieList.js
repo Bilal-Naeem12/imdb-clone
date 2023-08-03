@@ -10,17 +10,27 @@ import Context from '../../Context/Context'
 export default function MovieList() {
   
     const a = useContext(Context)
-    const [spinner, setspinner] = useState(true)
+    const [spinner, setspinner] = useState(false)
     const [movieList, setmovieList] = useState([])
     const { types } = useParams()
-
+const [page, setpage] = useState(1)
 
     const getData = async () => {
 
-        await fetch(`https://api.themoviedb.org/3/movie/${types ? types : "popular"}?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US`)
+        await fetch(`https://api.themoviedb.org/3/movie/${types ? types : "popular"}?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US&page=${page}`)
             .then(res => res.json()).then(data => { setmovieList(data.results) })
+            console.log(page+ "fetch")
 
     }
+
+const loadMore  = async ()=>{
+setpage(page+1)
+
+console.log(page+ "onclick")
+await fetch(`https://api.themoviedb.org/3/movie/${types ? types : "popular"}?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US&page=${page}`)
+.then(res => res.json()).then(data => { setmovieList(movieList.concat(data.results)) })
+}
+
 
 
     useEffect(() => {
@@ -36,7 +46,7 @@ export default function MovieList() {
             a.update(true)
         }, 2000);
         getData()
-
+        setpage(page+1)
     }, [types])
 
  
@@ -55,7 +65,14 @@ export default function MovieList() {
                             })
                         }
                     </div>
+                    
                 </div>
+                <div className='moreLoad  '>
+                    <div className='load'>
+                    <i class="fa-solid fa-arrow-down" onClick={loadMore}></i>
+                    </div>
+                </div>
+              
             </div>
 
     )

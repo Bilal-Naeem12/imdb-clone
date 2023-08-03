@@ -1,20 +1,61 @@
-.movie_list
-{
-    width: 99vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: rgb(36, 35, 35);
-  padding-block: 50px;
+.movie_list {
+
+    width: 98.6vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(36, 35, 35);
+    padding-block: 50px;
+    position: relative;
 }
 
-.list_Cards{
+.list_Cards {
     padding: 0;
-    
+
     width: 76vw;
-justify-content: space-around;
+    justify-content: space-around;
 }
-.cover{
+
+.cover {
     margin-top: -20px;
+}
+
+.moreLoad {
+    bottom: 2%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 5vw;
+    position: absolute;
+}
+
+.load {
+    font-size: 2.5rem;
+    padding: 0.25vw 1.25vw;
+    background-color: rgba(255, 0, 0, 0.767);
+    border-radius: 50%;
+    margin-right: 5%;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    animation: myAnimation 0.6s ease-in-out  infinite alternate running;
+   
+}
+
+.load:hover {
+
+    background-color: rgb(255, 0, 0);
+   
+}
+
+
+@keyframes myAnimation {
+    from {
+        transform:translateY(0px)
+    }
+
+    to {
+        transform:translateY(15px)
+    }
 }
