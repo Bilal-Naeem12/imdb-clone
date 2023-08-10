@@ -1,52 +1,127 @@
+import "./Navbar.css";
+import { Link } from "react-router-dom";
 
-import "./Navbar.css"
-import { Link } from 'react-router-dom'
+import React, { useState, useContext } from "react";
+import Search from "./Search";
+import Context from "../../Context/Context";
 
-import React, { Component } from 'react'
+export default function Navbar() {
+  const a = useContext(Context);
+  const [types, settypes] = useState("");
+  const [searchText, SetsearchText] = useState("");
 
-export default class Navbar extends Component {
-
-  constructor() {
-    super()
-    this.state = {
-      types: ""
+ const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault(); 
     }
-
   }
 
+ const searching = (e) => {
 
-  render() {
-  
-    return (
-      <nav className="navbar navbar-expand-lg bg-dark navbar-dark sticky-top ">
-        <div className="container-fluid mx-4" >
-          <Link className={`navbar-brand ${this.state.types === "" ? "" : ""}`} onClick={()=>{this.setState({types: ""})}} to="/"><img src="https://logos-download.com/wp-content/uploads/2016/11/IMDb_logo_logotype.png" alt="" /></Link>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  SetsearchText(e.target.value)
+if (e.target.value === "") {
+  a.setstatus({ display: false});
+}
+else{
+  a.setstatus({ display: true});
+}
+  }
+
+  return (
+    <>
+      <nav className="navbar navbar-expand-lg sticky-top navbar-dark   ">
+        <div className="container-fluid mx-4 ">
+          <Link
+            className={`navbar-brand ${types === "" ? "" : ""}`}
+            onClick={() => {
+              settypes("");
+            }}
+            to="/"
+          >
+            <img
+              src="https://logos-download.com/wp-content/uploads/2016/11/IMDb_logo_logotype.png"
+              alt=""
+              className="me-5"
+            />
+          </Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse " id="navbarSupportedContent">
+          <div
+            className="collapse navbar-collapse "
+            id="navbarSupportedContent"
+          >
             <ul className="navbar-nav me-auto mb-2 mb-lg-0  d-flex justify-content-between">
               <li className="nav-item">
-                <Link className={`nav-link  hover-link ${this.state.types === "popular" ? "active-link" : ""}`} onClick={()=>{this.setState({types: "popular"})}} aria-current="page" to="/movies/popular">Popular</Link>
+                <Link
+                  className={`nav-link  hover-link ${
+                    types === "popular" ? "active-link" : ""
+                  }`}
+                  onClick={() => {
+                    settypes( "popular" );
+                    console.log(types);
+                  }}
+                  aria-current="page"
+                  to="/movies/popular"
+                >
+                  Popular
+                </Link>
               </li>
               <li className="nav-item">
-                <Link className={`nav-link hover-link ${this.state.types === "top_rated" ? "active-link" : ""} `} onClick={()=>{this.setState({types: "top_rated"})}} to="/movies/top_rated">Top Rated</Link>
-              </li> 
-              <li className="nav-item">
-                <Link className={`nav-link hover-link ${this.state.types === "upcoming" ? "active-link" : ""} }  `} onClick={()=>{this.setState({types: "upcoming"})}} to="/movies/upcoming">Upcoming</Link>
+                <Link
+                  className={`nav-link hover-link ${
+                    types === "top_rated" ? "active-link" : ""
+                  } `}
+                  onClick={() => {
+                    settypes("top_rated" );
+                  }}
+                  to="/movies/top_rated"
+                >
+                  Top Rated
+                </Link>
               </li>
               <li className="nav-item">
-
+                <Link
+                  className={`nav-link hover-link ${
+                    types === "upcoming" ? "active-link" : ""
+                  } }  `}
+                  onClick={() => {
+                    settypes( "upcoming" );
+                  }}
+                  to="/movies/upcoming"
+                >
+                  Upcoming
+                </Link>
               </li>
+              <li className="nav-item"></li>
             </ul>
-            <div className="d-flex align-items-center hover-link "> <i className="fa-solid fa-circle-user user me-2"></i>
-              <span className=' '>User</span></div>
 
+            <form className="form-inline d-flex  search ">
+              <input
+                   value={searchText}
+                className="form-control "
+                onKeyDown={handleKeyDown}
+                placeholder="Enter any Keyword"
+              
+                id="clickbox"
+                onChange={searching}
+           
+              />
+            </form>
           </div>
         </div>
       </nav>
-    )
-  }
+      <span className="yoo fixed-top">
+        <Search display={a.status.display}   text= {searchText}/>
+      </span>
+    </>
+  );
 }
-
- 

@@ -15,6 +15,8 @@
     width: 100%;
   }
 
+
+  
   .details{
     max-width: 50vw;
     bottom: 100%;
@@ -22,7 +24,7 @@
   }
 
   .image-card{
-    bottom: 85%;
+    bottom: 90%;
     left: 2%;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.712) 0px 0px 15px 1px;
@@ -132,9 +134,12 @@ justify-content: space-between;
 }
 
 
+
+
 .linkss{
-margin-block: 55px;
-  font-size: 2vw;
+margin-top: 55px;
+  font-size: 1.35vw;
+  font-weight: 600;
 }
 
 
@@ -148,9 +153,9 @@ a{
  border: none;
   background-color: rgba(255, 0, 0, 0.89);
   text-transform: capitalize;
-  font-weight: 600;
-  font-size: 1.5vw;
-  width:14vw;
+
+  font-size: 1.25vw;
+ padding-inline: 2vw;
 }
 
 .but:hover{
@@ -161,7 +166,8 @@ a{
 .movie_list_d
 
 {
-  margin-block: 50px;
+  margin-top: 200px;
+  margin-bottom: 50px;
   z-index: 5;
   width: 100%;
   display: flex;
@@ -224,3 +230,13 @@ width: 100%;
  .sug-btn-right:hover{
   background-color: rgb(0, 0, 0);
  }
+
+
+ iframe{
+  margin-top: 50px;
+  
+  width: 80%;
+  height:600px;
+ }
+
+

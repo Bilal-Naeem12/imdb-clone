@@ -4,7 +4,9 @@ const State = (props) =>{
    
 
     const [status, setstatus] = useState({
-        "footer" : true
+        "footer" : true,
+        display : false,
+
     })
 
  const update = (e)=>{
@@ -14,8 +16,10 @@ const State = (props) =>{
  }
 
 
+
+
   return (
- <Context.Provider value={{status,update}}>
+ <Context.Provider value={{status,update,setstatus}}>
 
 
     {props.children}

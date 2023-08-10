@@ -10,17 +10,19 @@ import Context from '../../Context/Context'
 export default function MovieList() {
   
     const a = useContext(Context)
-    const [spinner, setspinner] = useState(false)
+    const [spinner, setspinner] = useState(true)
     const [movieList, setmovieList] = useState([])
     const { types } = useParams()
 const [page, setpage] = useState(1)
 
     const getData = async () => {
-
+        setspinner(true)
+        a.update(false)
         await fetch(`https://api.themoviedb.org/3/movie/${types ? types : "popular"}?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US&page=${page}`)
             .then(res => res.json()).then(data => { setmovieList(data.results) })
             console.log(page+ "fetch")
-
+            setspinner(false)
+            a.update(true)
     }
 
 const loadMore  = async ()=>{
@@ -40,11 +42,8 @@ await fetch(`https://api.themoviedb.org/3/movie/${types ? types : "popular"}?api
 
         
         a.update(false)
-        setspinner(true)
-        setTimeout(() => {
-            setspinner(false)
-            a.update(true)
-        }, 2000);
+  
+    
         getData()
         setpage(page+1)
     }, [types])

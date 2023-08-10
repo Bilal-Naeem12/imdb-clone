@@ -1,0 +1,24 @@
+.pre-img{
+    width: 120px;
+    height: 100%;
+    
+}
+.rowss{
+    
+    margin: auto;
+    background: rgb(0, 0, 0);
+
+    padding: 20px;
+
+
+}
+
+.hoverr:hover{
+    transition: all 0.5s ease-in-out;
+    color: rgba(255, 0, 0, 0.877);
+}
+
+.img-loader{
+    width: 50%;
+    height: 200px;
+}

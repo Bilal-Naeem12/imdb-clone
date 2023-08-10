@@ -1,6 +1,6 @@
 img{
     width:80px;
-    margin-right : 2rem
+   
 }
 .user{
 
@@ -12,23 +12,87 @@ img{
 .hover-link{
     cursor: pointer;
     font-size: 1.25rem;
-   
+   color: white;
 }
 
 .hover-link:hover{
-    color: rgb(255, 0, 0);
+    color:rgb(255, 17, 0);
 }
 
 .active-link  {
-    color: rgb(255, 0, 0);
+    color: rgb(255, 17, 0);
 }
 
 
 .active-link:focus {
-    color: rgb(255, 0, 0);
+    color: rgb(255, 17, 0);
 }
 
 ul li {
     margin-right: 2rem;
 }
 
+
+
+.navbar{
+    background: #000000;
+    box-shadow: 0px 0px 50px 2px rgba(255, 255, 255, 0.171);
+}
+.parent-div{
+    margin-right: 2vw;
+    width: 30vw;
+    max-height: 0vh;
+    overflow: auto;
+    background-color: rgb(129, 129, 129);
+    transition: all 1s ease-in-out;
+
+}
+
+.height{
+    max-height: 60vh;
+}
+.movie-detail{
+    display: flex;
+    flex-direction: column;
+    gap:1px ;
+  padding-block: 1px;
+}
+.yoo{
+   z-index: 1110;
+    top: 66px;
+    left: auto;
+    border-radius: 100px;
+}
+
+
+
+#clickbox{
+
+    color: rgb(0, 0, 0);
+    background: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.637);
+    border-radius: 3px;
+   width: 120%;
+   font-size: 1.1rem;
+   font-weight: 400;
+   transition: all .5s ease-in-out;
+}
+#clickbox::placeholder{
+    
+    color: rgba(39, 39, 39, 0.692);
+
+   
+}
+
+
+ 
+ 
+
+.not-found{
+    width: 100%;
+    height: 30vh;
+    text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
