@@ -25,7 +25,7 @@ setMoives(parsedData.results)
   return (
   
     <div className={`parent-div ${props.display ? "height":""}  `} >
-   { spin ? <Spinner />
+   { spin ? <div className='spin'><Spinner /></div> 
 :
 <div className={`movie-detail  `}>
 {

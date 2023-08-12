@@ -53,7 +53,7 @@ await fetch(`https://api.themoviedb.org/3/movie/${types ? types : "popular"}?api
     return (
         spinner ? <Spinnner /> :
             <div className="movie_list contianer ">
-                <h1 className='list_title'>{(types ? types : "POPULAR").toUpperCase()}</h1>
+                <h1 className='list_title'>{(types ? types?.replace("_"," ") : "POPULAR").toUpperCase()}</h1>
                 <div className="cover">
                     <div className="list_Cards gap-1 d-flex flex-wrap ">
                         {

@@ -10,7 +10,7 @@ export default function Card({movie}) {
     useEffect(()=>{
         setTimeout(()=>{
             setIsloading(false)
-        },5000)
+        },3000)
     },[])
 
 

@@ -19,8 +19,9 @@ export default function Moviepreview({movie}) {
           <h6>{movie.release_date}</h6>
           <div className="rating d-flex gap-3">{movie.vote_average != 0 ?(movie.vote_average).toFixed(2)  :""}  <span> <DuplicatedDiv n={Math.ceil (movie.vote_average/2)} /> </span></div>
           </div>
-      
+        
         </div>
+      
         </Link>
     )
 }

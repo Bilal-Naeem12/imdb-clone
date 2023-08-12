@@ -20,10 +20,10 @@ export default function Navbar() {
 
   SetsearchText(e.target.value)
 if (e.target.value === "") {
-  a.setstatus({ display: false});
+  a.setstatus({ display: false, footer:true});
 }
 else{
-  a.setstatus({ display: true});
+  a.setstatus({ display: true , footer:true});
 }
   }
 
@@ -110,11 +110,16 @@ else{
                 className="form-control "
                 onKeyDown={handleKeyDown}
                 placeholder="Enter any Keyword"
-              
+                type="search"
                 id="clickbox"
                 onChange={searching}
-           
+                aria-label="Search"
               />
+             
+               <form class="d-flex" role="search">
+       
+      </form>
+          
             </form>
           </div>
         </div>

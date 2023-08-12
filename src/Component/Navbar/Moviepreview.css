@@ -1,24 +1,27 @@
 .pre-img{
     width: 120px;
     height: 100%;
-    
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.555);
 }
 .rowss{
     
     margin: auto;
-    background: rgb(0, 0, 0);
-
+    border-bottom: solid rgba(255, 255, 255, 0.548);
+border-bottom-width: 0.5px;
     padding: 20px;
 
 
 }
 
+
 .hoverr:hover{
     transition: all 0.5s ease-in-out;
-    color: rgba(255, 0, 0, 0.877);
+    color: rgba(157, 255, 0, 0.877);
 }
 
 .img-loader{
     width: 50%;
     height: 200px;
 }
+
