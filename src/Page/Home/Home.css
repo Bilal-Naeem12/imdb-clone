@@ -14,7 +14,6 @@ height: 100%;
 
 }
 
-
 .poster_Overlay{
     position: absolute;
     left: 10vw;
@@ -66,3 +65,102 @@ height: 100%;
 .icon2{
     color: yellow;
 }
+
+@media  (max-width:1370px) {
+    .poster{
+       height : 70vh;
+    }   
+    .poster_Overlay{
+    bottom:  10vh;
+        left: 10vw;
+   width: 80vw;
+    }
+   .poster_title{
+   
+       text-align: left;
+       font-size: 3rem;
+       font-weight: 900;
+   }
+   .post_description{
+    width: 50vw;
+    font-size: 1.25rem;
+    text-align: justify;
+}
+   .poster_release{
+       display: flex;
+      
+       align-items: center;
+       width: 40vw;
+       
+       font-size:1.25rem;
+   }
+   .immg{
+   
+   width: 100vw !important;
+    height: 70vh !important;
+       
+         filter: brightness(0.4);
+         
+     }
+     .immg2{
+   
+   
+       object-fit:cover;
+       
+       }
+       a{
+        display: block !important;
+        height: 100%;
+  
+       }
+   }
+
+
+
+@media  (max-width:800px) {
+ .poster{
+    height : 45vh;
+ }   
+ .poster_Overlay{
+ bottom:  10vh;
+     left: 10vw;
+width: 80vw;
+ }
+.poster_title{
+
+    text-align: left;
+    font-size: 3vh;
+    font-weight: 900;
+}
+.post_description{
+   display: none;
+}
+.poster_release{
+    display: flex;
+   
+    align-items: center;
+    width: 30vw;
+    
+    font-size: 2vh;
+}
+.immg{
+
+width: 100vw !important;
+ height: 40vh !important;
+    
+      filter: brightness(0.4);
+      
+  }
+  .immg2{
+
+
+    object-fit:contain;
+    
+    }
+    a{  display: block  !important;
+        height: 100%;
+      
+    }
+}
+
+

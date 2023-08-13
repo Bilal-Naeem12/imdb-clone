@@ -55,7 +55,7 @@ await fetch(`https://api.themoviedb.org/3/movie/${types ? types : "popular"}?api
             <div className="movie_list contianer ">
                 <h1 className='list_title'>{(types ? types?.replace("_"," ") : "POPULAR").toUpperCase()}</h1>
                 <div className="cover">
-                    <div className="list_Cards gap-1 d-flex flex-wrap ">
+                    <div className="list_Cards d-flex flex-wrap ">
                         {
                             movieList.map((e) => {
                                 if (e.backdrop_path !== null) {

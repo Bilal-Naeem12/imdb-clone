@@ -14,7 +14,8 @@ export default class Home extends Component {
     this.state = {
       popularMovies: [],
       star :[]
-      ,spin: true
+      ,spin: true,
+      num : 0
     }
 
 
@@ -28,13 +29,13 @@ export default class Home extends Component {
   
       this.setState({
         popularMovies: parsedData.results
-       , spin: false
-
+       , spin: false,
+       num : (Math.random()*10+1)
       })
     } catch (error) {
       console.log(error);
     }
-  
+    this.setState({}) 
 
   }
 
@@ -48,8 +49,9 @@ export default class Home extends Component {
           <Carousel autoPlay={true} showThumbs={false} transitionTime={2} infiniteLoop={true} showStatus={false} showArrows={true}>
             {
 
-              this.state.popularMovies.map((e) => {
-                if (e.backdrop_path !== null) {
+              this.state.popularMovies.splice(this?.statenum,this.state.popularMovies.length-this.state?.num).map((e) => {
+                if ( e.backdrop_path !== null) {
+                
                   return <>
                     <Link style={{ textDecoration: "none", color: "white" }} to={`/movie/${e.id}`} >
                       <div className="immg">
@@ -64,13 +66,13 @@ export default class Home extends Component {
                           <div className="rating d-flex gap-3">{e.vote_average != 0 ?e.vote_average :""}  <span> <DuplicatedDiv n={Math.ceil (e.vote_average/2)} /> </span></div>
                         </div>
                         <div className="post_description">
-                          {e.overview}
+                          {e.overview.length > 205 ? e.overview.substring(0,205) + " ...." : e.overview}
                         </div>
                       </div>
                     </Link>
                   </>
                 }
-
+         
 
               })}
 
