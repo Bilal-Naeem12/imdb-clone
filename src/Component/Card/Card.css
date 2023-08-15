@@ -42,13 +42,13 @@
 
 
 .card_title{
-    font-size: 15px; 
+    font-size: 18px; 
 }
 .card_rating{
-    font-size: 12px; 
+    font-size: 13px; 
 }
 .card_description{
-    font-size: 10px; 
+    font-size: 12px; 
     text-align: justify;
     text-align: left;
 }
@@ -86,14 +86,14 @@
 }
 
     .card_img{
-     width: 100%;
-     height: 20%;
+     width: 36vw;
+     height: 50%;
     }
 
   
     .cards{
      
-        margin-top: 50px;
+        margin-top: 10px;
         width: calc(100% - 40vw  );
         height: 20%;
     
@@ -101,7 +101,8 @@
     }
  
     .cards:hover{
-       
+
+        scale:unset;
    
         .cards_overlay{
             display: none;

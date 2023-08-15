@@ -29,7 +29,7 @@ else{
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg sticky-top navbar-dark   ">
+      <nav className="navbar navbar-expand-lg fixed-top  navbar-dark   ">
         <div className="container-fluid mx-4 ">
           <Link
             className={`navbar-brand ${types === "" ? "" : ""}`}

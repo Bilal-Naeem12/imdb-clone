@@ -63,7 +63,7 @@ export default class Home extends Component {
                         </div>
                         <div className="poster_release">
                           {e ? e.release_date : ""}
-                          <div className="rating d-flex gap-3">{e.vote_average != 0 ?e.vote_average :""}  <span> <DuplicatedDiv n={Math.ceil (e.vote_average/2)} /> </span></div>
+                          <div className=" d-flex gap-3">{e.vote_average != 0 ?e.vote_average :""}  <span> <DuplicatedDiv n={Math.ceil (e.vote_average/2)} /> </span></div>
                         </div>
                         <div className="post_description">
                           {e.overview.length > 205 ? e.overview.substring(0,205) + " ...." : e.overview}

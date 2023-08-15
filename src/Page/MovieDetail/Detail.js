@@ -91,7 +91,7 @@ export default function Detail() {
   return isLoading ? (
     <Spinner />
   ) : (
-    <div className=" mx-auto" style={{ width: "90%" }}>
+    <div className="parent1" >
       <div
         className="parallax position-relative d-flex align-items-end  "
         style={{
@@ -104,7 +104,6 @@ export default function Detail() {
       <div className="card position-relative bg-dark text-white pt-4  px-5 super-parent ">
         <img
           className="position-absolute image-card"
-          style={{ width: "24vw", height: "65vh" }}
           src={`https://image.tmdb.org/t/p/original${
             Movie ? Movie.poster_path : ""
           }`}
@@ -123,7 +122,7 @@ export default function Detail() {
           </div>
 
           <div className="release_date mb-3 ">{Movie?.release_date}</div>
-          <div className="mb-3 d-flex  gap-4">
+          <div className="genre mb-3 d-flex  gap-4">
             {
                 Movie?.genres?.map((e) => {
                     return <Genre text={e?.name} />;
@@ -139,14 +138,14 @@ export default function Detail() {
           <div className="   movie-Detail  d-flex  flex-column justify-content-center gap-5  align-items-center ">
             <h2 className="">Production Companys</h2>
 
-            <div className="d-flex flex-column gap-5">
+            <div className="d-flex flex-column gap-5 company  ">
               {" "}
               {Movie.production_companies?.map((e) => {
                 console.log(e);
                 return e.logo_path ? (
                   <img
-                    className=" image-mini-card  "
-                    style={{ width: "10vw", height: "10vh" }}
+                    className=" image-mini-card   "
+                 
                     src={`https://image.tmdb.org/t/p/original${e.logo_path}`}
                     alt="..."
                   />
@@ -164,7 +163,7 @@ export default function Detail() {
           <div className="    movie-Detail  d-flex  flex-column gap-2 justify-content-center  align-items-center ">
             <h2 className="">Movie Details</h2>
 
-            <div className="d-flex    flex-wrap gap-4 justify-content-between align-items-center ">
+            <div className="d-flex    flex-wrap detail justify-content-between align-items-center ">
               <Feature Key={"status"} Value={Movie.status} />
               <Feature Key={"title"} Value={Movie.title} />{" "}
               <Feature Key={"vote average"} Value={Movie.vote_average} />{" "}
@@ -193,6 +192,8 @@ export default function Detail() {
         </div>
        
            {/* video */}
+           <div className="d-flex flex-column justify-content-center  align-items-center 
+           ">
            <h2 className="text-center trailer">Trailer</h2>
 {          <iframe
 className="mx-auto"
@@ -203,10 +204,10 @@ className="mx-auto"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
         ></iframe> 
-
     } 
      
 
+</div>
       
         {/* Suggestions */}
         <div className="movie_list_d text-start  position-relative ">
@@ -217,7 +218,7 @@ className="mx-auto"
             onClick={handleScrollLeft}
           ></i>
           <div className="cover_d text-light " ref={scrollContainerRef}>
-            <div className="list_Cards_d ">
+          <div className="d-flex gap-3  moviee">
               {movieList.map((e) => {
                 for (let i = 0; i < Movie.genres.length; i++) {
                   if (
@@ -229,7 +230,8 @@ className="mx-auto"
                   }
                 }
               })}
-            </div>
+          </div>
+         
           </div>
           <i
             class="fa-solid fa-chevron-right sug-btn-right scroller-btn "

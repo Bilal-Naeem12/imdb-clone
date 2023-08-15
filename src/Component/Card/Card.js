@@ -38,7 +38,7 @@ export default function Card({movie}) {
     <img className='card_img' src={`https://image.tmdb.org/t/p/original${movie?movie.poster_path:""}`} alt="" />
     <div className="cards_overlay ">
         <div className="card_title ">{movie?movie.original_title:""}</div>
-        <div className="card_rating mt-1   ">
+        <div className="card_rating mt-1 d-flex justify-content-between w-75  ">
             <span>{movie?movie.release_date:""}</span>
       
        <span className=''> {movie?movie.vote_average:""}<i className="fa-solid fa-star icon"></i></span>

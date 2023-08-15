@@ -4,16 +4,16 @@ export default function Feature({Key,Value}) {
   return (
 
 
-    <div className=' gap-5 d-flex  feature'>
+    <div className='  d-flex  feature'>
         
-        <span className='key'>
+        <div className='key'>
         {Key.toString().toUpperCase() } :
-        </span>
+        </div>
        
         
-        <span className='value'>
+        <div className='value'>
         {Value}
-        </span>
+        </div>
         
         </div>
   )

@@ -15,6 +15,7 @@ height: 100%;
 }
 
 .poster_Overlay{
+ 
     position: absolute;
     left: 10vw;
 
@@ -31,9 +32,8 @@ height: 100%;
 
 .poster_title{
 
-    
     font-size: 4rem;
-
+text-align: left;
     font-weight: 900;
 }
 
@@ -64,6 +64,9 @@ height: 100%;
 
 .icon2{
     color: yellow;
+}
+.poster{
+    margin-top: 5vh;
 }
 
 @media  (max-width:1370px) {
@@ -119,12 +122,12 @@ height: 100%;
 
 @media  (max-width:800px) {
  .poster{
-    height : 45vh;
+    height : 40vh;
  }   
  .poster_Overlay{
  bottom:  10vh;
      left: 10vw;
-width: 80vw;
+
  }
 .poster_title{
 
@@ -139,7 +142,7 @@ width: 80vw;
     display: flex;
    
     align-items: center;
-    width: 30vw;
+   min-width:  80%;
     
     font-size: 2vh;
 }
