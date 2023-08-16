@@ -134,7 +134,7 @@ export default function Detail() {
           <h2>Overview</h2> <p>{`${Movie ? Movie.overview : ""}`}</p>
         </div>
 
-        <div className="d-flex justify-content-between  align-items-start mt-5 gap-5 parent ">
+        <div className="d-flex justify-content-between  align-items-start mt-5  parent ">
           <div className="   movie-Detail  d-flex  flex-column justify-content-center gap-5  align-items-center ">
             <h2 className="">Production Companys</h2>
 
@@ -155,10 +155,11 @@ export default function Detail() {
               })}
             </div>
           </div>
-
+<div className="line">
           <div class="outer ">
             <div class="inner"></div>
-          </div>
+            </div>
+            </div>
 
           <div className="    movie-Detail  d-flex  flex-column gap-2 justify-content-center  align-items-center ">
             <h2 className="">Movie Details</h2>
@@ -173,7 +174,7 @@ export default function Detail() {
                 Value={Movie.original_language.toUpperCase()}
               />
                  <div className="linkss">
-          <span className="me-5 linky">
+          <span className=" linky">
             For More Detail Check Out This Link
           </span>{" "}
           <button
@@ -192,7 +193,7 @@ export default function Detail() {
         </div>
        
            {/* video */}
-           <div className="d-flex flex-column justify-content-center  align-items-center 
+           <div className="d-flex flex-column justify-content-center video  align-items-center 
            ">
            <h2 className="text-center trailer">Trailer</h2>
 {          <iframe
@@ -212,13 +213,13 @@ className="mx-auto"
         {/* Suggestions */}
         <div className="movie_list_d text-start  position-relative ">
         
-        <h2 className=" ">Sugguestions</h2>
+        <h2 className="sugg">Sugguestions</h2>
           <i
             class="fa-solid fa-chevron-left sug-btn-left scroller-btn "
             onClick={handleScrollLeft}
           ></i>
           <div className="cover_d text-light " ref={scrollContainerRef}>
-          <div className="d-flex gap-3  moviee">
+          <div className="d-flex gap-4  moviee">
               {movieList.map((e) => {
                 for (let i = 0; i < Movie.genres.length; i++) {
                   if (

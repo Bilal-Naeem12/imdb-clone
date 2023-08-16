@@ -79,7 +79,7 @@
     
 
 
-@media  (max-width:650px) {
+@media  (max-width:800px) {
 .immg{
     width: 40%;
     height: 50%;
@@ -87,6 +87,7 @@
 
     .card_img{
      width: 36vw;
+     max-width: 200px;
      height: 50%;
     }
 
@@ -95,6 +96,7 @@
      
         margin-top: 10px;
         width: calc(100% - 40vw  );
+ 
         height: 20%;
     
     
