@@ -6,7 +6,6 @@ const State = (props) =>{
     const [status, setstatus] = useState({
         "footer" : true,
         display : false,
-
     })
 
  const update = (e)=>{

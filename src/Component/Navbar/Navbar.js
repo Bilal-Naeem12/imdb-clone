@@ -1,7 +1,7 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 
-import React, { useState, useContext } from "react";
+import React, { useState, useContext,useEffect } from "react";
 import Search from "./Search";
 import Context from "../../Context/Context";
 
@@ -20,17 +20,51 @@ export default function Navbar() {
 
   SetsearchText(e.target.value)
 if (e.target.value === "") {
-  a.setstatus({ display: false, footer:true});
+  a.setstatus({ ...a.status, display: false});
 }
 else{
-  a.setstatus({ display: true , footer:true});
+  a.setstatus({ ...a.status,display: true });
 }
   }
 
+
+  const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
+  const [navbarVisible, setNavbarVisible] = useState(true);
+useEffect(()=>{
+SetsearchText("")
+},[document.URL])
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+
+      if (prevScrollPos > currentScrollPos) {
+       
+        setNavbarVisible(true);
+      } else {
+        if (currentScrollPos > 200 && searchText.length === 0) {
+          setNavbarVisible(false);
+        }
+      }
+   
+      setPrevScrollPos(currentScrollPos);
+    };
+    console.log("im useEffect");
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+
+
+  }, [prevScrollPos]);
+
+ 
+
+
   return (
     <>
-      <nav className="navbar navbar-expand-lg fixed-top  navbar-dark   ">
-        <div className="container-fluid mx-4 ">
+ 
+      <nav className="navbar navbar-expand-lg fixed-top  navbar-dark  container-fluid   ">
+        <div className="container-fluid  ">
           <Link
             className={`navbar-brand ${types === "" ? "" : ""}`}
             onClick={() => {
@@ -44,6 +78,8 @@ else{
               className="me-5"
             />
           </Link>
+     
+         
           <button
             className="navbar-toggler"
             type="button"
@@ -52,6 +88,7 @@ else{
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
+  
           >
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -101,11 +138,12 @@ else{
                   Upcoming
                 </Link>
               </li>
-              <li className="nav-item"></li>
+            
             </ul>
-
-            <form className="form-inline d-flex  search ">
-              <input
+        
+         
+      <form className={`form-inline d-flex  search`}>
+       <div className="d-flex justify-content-center  align-items-center s-icon"><i class="fa-solid fa-magnifying-glass"></i></div>       <input
                    value={searchText}
                 className="form-control "
                 onKeyDown={handleKeyDown}
@@ -121,9 +159,32 @@ else{
       </form>
           
             </form>
+ 
+         
           </div>
+       
         </div>
+    
       </nav>
+      <div className={`search1 ${ navbarVisible ? "" : "search2"    }`} >
+      <form className="form-inline d-flex  ">
+       <div className="d-flex justify-content-center  align-items-center s-icon"><i class="fa-solid fa-magnifying-glass"></i></div>       <input
+                   value={searchText}
+                className="form-control "
+                onKeyDown={handleKeyDown}
+                placeholder="Enter any Keyword"
+                type="search"
+                id="clickbox"
+                onChange={searching}
+                aria-label="Search"
+              />
+             
+               <form class="d-flex" role="search">
+       
+      </form>
+          
+            </form>
+      </div>
       <span className="yoo fixed-top">
         <Search display={a.status.display}   text= {searchText}/>
       </span>

@@ -6,11 +6,12 @@ import { Link } from 'react-router-dom'
 export default function Card({movie}) {
     const [isloading,setIsloading] = useState(true)
   
-
+    const [screen,setScreen] = useState(0)
     useEffect(()=>{
         setTimeout(()=>{
             setIsloading(false)
         },3000)
+        setScreen(window.innerWidth)
     },[])
 
 
@@ -20,9 +21,9 @@ export default function Card({movie}) {
  { isloading ? <div className="cards">
  <SkeletonTheme baseColor="#202020" highlightColor="#f5f5f5">
 
- <Skeleton height={ 300}  duration={2}>
+ <Skeleton height={screen <= 990 ?200: 300}  duration={2}>
 
-
+{console.log(screen + "assssssssss")}
 
 
  </Skeleton>

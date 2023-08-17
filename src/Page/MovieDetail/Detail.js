@@ -27,6 +27,7 @@ export default function Detail() {
   };
   const reset = () => {
     scrollContainerRef.current?.scrollTo({ left: 0, behavior: "smooth" });
+   
   };
 
   useEffect(() => {
@@ -138,7 +139,7 @@ export default function Detail() {
           <div className="   movie-Detail  d-flex  flex-column justify-content-center gap-5  align-items-center ">
             <h2 className="">Production Companys</h2>
 
-            <div className="d-flex flex-column gap-5 company  ">
+            <div className="d-flex flex-column gap-4 company  ">
               {" "}
               {Movie.production_companies?.map((e) => {
                 console.log(e);

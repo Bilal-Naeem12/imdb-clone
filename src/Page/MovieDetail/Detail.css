@@ -84,7 +84,7 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
 
 }
 .sugg{
-  margin-bottom: -120px;
+  margin-bottom: -50px;
 }
 
 .moviee{
@@ -118,7 +118,7 @@ justify-content: space-between;
 
 .parent{
   height: 80vh;
-
+  margin-top: unset !important;
 }
 
 
@@ -217,7 +217,7 @@ flex-direction: column;
 
 width: 100%;
   overflow-x: auto;
-height: 80vh;
+height: 70vh;
    
 
 }
@@ -274,6 +274,10 @@ height: 80vh;
 .video{
   margin-top: 90px;
 }
+.company  {
+  overflow: auto;
+  max-height: 250px;
+}
 
 @media  (max-width:1200px) {
 
@@ -308,8 +312,8 @@ iframe{
  }
 .company  {
   gap: 10px !important;
-  overflow: auto;
-  max-height: 270px;
+
+  max-height: 200px;
 }
 .key{
   font-size: 0.9rem;
@@ -321,15 +325,15 @@ iframe{
   margin-bottom: -50px;
 }
 .moviee{
-  margin-inline: 40px;
+  margin-inline: 20px;
 }
 .cover_d{
   height: 60vh;
 }
 .image-card{
-  height: 17%;
+  height: 18%;
   width: 27%;
-  bottom: 93%;
+  bottom: 91%;
 }
 
 .over h2 {
@@ -344,7 +348,7 @@ iframe{
 margin-top: 10px;
 }
 .over > p{
-  font-size: 1rem;
+  font-size: 0.7rem;
 }
   }
   
@@ -361,7 +365,7 @@ margin-top: 60px;
 }
   .parent1{
     width: 100%;
-  
+  margin-top: unset !important;
   }
   .over {
     text-align: left;
@@ -419,6 +423,7 @@ text-align: center;
   justify-content: center !important;
   align-items: center !important;
 
+  
   gap: 38px;
 }
 .company{
@@ -426,7 +431,7 @@ text-align: center;
   flex-direction: row !important;
   gap: 5px !important;
 margin-inline: 50px;
-overflow: auto;
+
 width: 70vw;
 
 }
