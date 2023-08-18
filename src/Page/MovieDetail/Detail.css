@@ -270,6 +270,7 @@ height: 70vh;
  width: 80%; 
  height: 10vh;
  margin: auto;
+ max-width: 400px;
 }
 .video{
   margin-top: 90px;
@@ -438,6 +439,7 @@ width: 70vw;
 .image-mini-card {
 width: 21vw;
 height: unset;
+
 }
 
 
