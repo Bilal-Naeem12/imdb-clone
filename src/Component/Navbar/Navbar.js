@@ -70,7 +70,7 @@ SetsearchText("")
             onClick={() => {
               settypes("");
             }}
-            to="/"
+            to="/imdb-clone"
           >
             <img
               src="https://logos-download.com/wp-content/uploads/2016/11/IMDb_logo_logotype.png"
