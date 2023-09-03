@@ -8,7 +8,7 @@ const a = useContext(Context)
 
 
     return (
-        <Link to={`http://localhost:3000/movie/${movie.id}`} style={{color:"white",textDecoration:"none"}} >
+        <Link to={`/movie/${movie.id}`} style={{color:"white",textDecoration:"none"}} >
         <div className='d-flex py-2 rowss  hoverr ' >
             <div className='me-3'>
             <img src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt="" className='pre-img' />
